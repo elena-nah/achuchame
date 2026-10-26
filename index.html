@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f9e6e6">
+  <meta name="description" content="Un squishy de bolsillo para apretar, estirar y soltar. Sin prisas, sin puntos, solo blandito.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Achúchame">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Achúchame · Tu squishy de bolsillo</title>
+</head>
+<body>
+  <div class="app-bg" aria-hidden="true"><div class="bloom bloom-a"></div><div class="bloom bloom-b"></div><div class="bloom bloom-c"></div></div>
+  <div class="app">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span class="brand-eye a"></span><span class="brand-eye b"></span><span class="brand-mouth"></span></div>
+        <div><div class="brand-name">achúchame<span class="brand-dot">.</span></div><div class="brand-caption">tu rincón blandito</div></div>
+      </div>
+      <div class="header-pill"><span class="status-dot"></span> aquí no hay prisas</div>
+    </header>
+
+    <main class="layout">
+      <section class="intro" aria-labelledby="app-title">
+        <div class="eyebrow"><span aria-hidden="true">✦</span> UN PEQUEÑO RESPIRO</div>
+        <h1 id="app-title">Hoy toca<br><em>achuchar.</em></h1>
+        <p class="subtitle">A veces solo necesitas apretar algo blandito. Y que no se queje. Mucho.</p>
+        <div class="picker-card">
+          <div class="card-title-line"><h2>Elige tu blandito</h2><span class="count-label" id="skin-number">01 / 05</span></div>
+          <div class="toys" role="group" aria-label="Elige un personaje">
+            <button class="toy active" data-skin="mochi" aria-pressed="true"><span class="toy-icon mochi" aria-hidden="true"><i></i><b></b></span><span>Mochi</span></button>
+            <button class="toy" data-skin="frog" aria-pressed="false"><span class="toy-icon frog" aria-hidden="true"><i></i><b></b></span><span>Ranita</span></button>
+            <button class="toy" data-skin="cloud" aria-pressed="false"><span class="toy-icon cloud" aria-hidden="true"><i></i><b></b></span><span>Nube</span></button>
+            <button class="toy" data-skin="star" aria-pressed="false"><span class="toy-icon star" aria-hidden="true"><i></i><b></b></span><span>Estrella</span></button>
+            <button class="toy" data-skin="flan" aria-pressed="false"><span class="toy-icon flan" aria-hidden="true"><i></i><b></b></span><span>Flancito</span></button>
+          </div>
+        </div>
+        <div class="tip"><span class="tip-icon" aria-hidden="true">♡</span><p><strong>Sin objetivos, sin récords.</strong><br>Aquí no tienes que conseguir absolutamente nada.</p></div>
+      </section>
+
+      <section class="play-panel" aria-label="Squishy interactivo">
+        <div class="play-head"><div><span class="live-blob" aria-hidden="true"></span><span class="small-eyebrow">EL SQUISHY DE HOY</span><h2 id="pet-name">Mochi, el abrazable</h2></div><button id="surprise-btn" class="icon-button" title="Una sorpresa" aria-label="Soltar estrellitas">✧</button></div>
+        <div class="stage" id="stage">
+          <div class="stage-star deco-s1" aria-hidden="true">✳</div><div class="stage-star deco-s2" aria-hidden="true">✧</div><div class="stage-star deco-s3" aria-hidden="true">✳</div>
+          <div class="breath-ring" id="breath-ring" aria-hidden="true"></div>
+          <canvas id="squishy-canvas" role="button" tabindex="0" aria-label="Aprieta, arrastra y suelta al squishy. También puedes mantener pulsada la barra espaciadora."></canvas>
+          <div class="breathing-msg" id="breathing-msg" aria-live="off"></div>
+          <div class="stage-instruction" id="stage-instruction" aria-live="polite">prueba a apretarme ♡</div>
+        </div>
+        <div class="play-footer">
+          <span class="hint"><span class="hint-arrow" aria-hidden="true">↝</span> aprieta · arrastra · suelta</span>
+          <button id="breath-btn" class="breath-btn" type="button" aria-pressed="false"><span aria-hidden="true">◌</span> Respira conmigo</button>
+        </div>
+      </section>
+    </main>
+    <section class="bottom-tools" aria-label="Preferencias del squishy">
+      <div class="tools-text"><span>Hazlo tuyo</span><small>un poquito más a tu gusto</small></div>
+      <div class="tool-actions">
+        <button id="sound-btn" class="setting-btn" aria-pressed="false" type="button"><span class="setting-emoji" aria-hidden="true">♫</span><span>Soniditos</span><span class="toggle" aria-hidden="true"><span></span></span></button>
+        <button id="haptic-btn" class="setting-btn" aria-pressed="false" type="button"><span class="setting-emoji" aria-hidden="true">〰</span><span>Vibración</span><span class="toggle" aria-hidden="true"><span></span></span></button>
+        <button id="night-btn" class="setting-btn" aria-pressed="false" type="button"><span class="setting-emoji" aria-hidden="true">☾</span><span>Modo noche</span><span class="toggle" aria-hidden="true"><span></span></span></button>
+      </div>
+    </section>
+    <footer class="footer-note">Hecho para dedos inquietos y días que pesan un poquito. ♡ <span>Se guarda en este dispositivo.</span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
